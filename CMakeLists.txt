@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.13)
-project(vectors)
+project(game-maths)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(vectors
+add_executable(game-maths
         main.cpp
         vectors.h
-        vectors.cpp)
+        vectors.cpp
+        matrices.h
+        matrices.cpp)

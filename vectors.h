@@ -75,6 +75,7 @@ float Angle(const vec3& l, const vec3& r);
 
 vec2 Project(const vec2& length, const vec2& direction);
 vec3 Project(const vec3& length, const vec3& direction);
+
 vec2 Perpendicular(const vec2& len, const vec2& dir);
 vec3 Perpendicular(const vec3& len, const vec3& dir);
 
