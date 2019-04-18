@@ -481,5 +481,5 @@ mat4 Ortho(float left, float right, float bottom, float top, float zNear, float 
 	return mat4(_11, 0.0f, 0.0f, 0.0f,
 			    0.0f,  _22, 0.0f, 0.0f,
 			    0.0f, 0.0f,  _33, 0.0f,
-			    _41,  _42,  _43, 1.0f);   //0.f, 0.f, zNear / (zNear - zFar), 1.f   ?
+			    _41,  _42,  _43, 1.0f);   //0.f, 0.f, zNear / (zNear - zFar), 1.f   possibly?
 }
