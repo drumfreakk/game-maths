@@ -8,4 +8,6 @@ add_executable(game-maths
         vectors.h
         vectors.cpp
         matrices.h
-        matrices.cpp)
+        matrices.cpp
+        Geometry2D.h
+        Geometry2D.cpp)
