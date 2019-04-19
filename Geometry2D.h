@@ -3,6 +3,9 @@
 
 #include "vectors.h"
 
+#define CLAMP(number, minimum, maximum) number = (number < minimum) ? minimum : ((number > maximum) ? maximum : number)
+#define OVERLAP(aMin, aMax, bMin, bMax) ((bMin<= aMax) && (aMin<= bMax))
+
 typedef vec2 Point2D;
 
 typedef struct Line2D {
@@ -64,5 +67,27 @@ bool LineOrientedRectangle(const Line2D& line, const OrientedRectangle& rectangl
 #define CircleLine(circle, line) LineCircle(line, circle)
 #define RectangleLine(rectangle, line) LineRectangle(line, rectangle);
 #define OrientedRectangleLine(rectangle, line) LineOrientedRectangle(line, rectangle);
+
+bool CircleCircle(const Circle& c1, const Circle& c2);
+bool CircleRectangle(const Circle& circle, const Rectangle2D& rectangle);
+#define RectangleCircle(rectangle, circle) CircleRectangle(circle, rectangle)
+bool CircleOrientedRectangle(const Circle& circle, const OrientedRectangle& rect);
+#define OrientedRectangleCircle(rectangle, circle) CircleOrientedRectangle(circle, rectangle)
+bool RectangleRectangle(const Rectangle2D& rect1, const Rectangle2D& rect2);
+
+typedef struct Interval2D {
+	float min;
+	float max;
+} Interval2D;
+
+Interval2D GetInterval(const Rectangle2D& rect, const vec2& axis);
+bool OverlapOnAxis(const Rectangle2D& rect1, const Rectangle2D& rect2, const vec2& axis);
+bool RectangleRectangleSAT(const Rectangle2D& rect1, const Rectangle2D& rect2);
+
+Interval2D GetInterval(const OrientedRectangle& rect, const vec2& axis);
+bool OverlapOnAxis(const Rectangle2D& rect1, const OrientedRectangle& rect2, const vec2& axis);
+bool RectangleOrientedRectangle(const Rectangle2D& rect1, const OrientedRectangle& rect2);
+#define OrientedRectangleRectangle(oriented, regular) RectangleOrientedRectangle(regular, oriented)
+bool OrientedRectangleOrientedRectangle(const OrientedRectangle& r1, const OrientedRectangle& r2);
 
 #endif
