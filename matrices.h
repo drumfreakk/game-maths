@@ -1,5 +1,5 @@
-#ifndef _H_MATH_MATRICES_
-#define _H_MATH_MATRICES_
+#ifndef GAME_MATHS_MATRICES_H
+#define GAME_MATHS_MATRICES_H
 
 #include "vectors.h"
 

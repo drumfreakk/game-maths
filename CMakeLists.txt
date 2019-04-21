@@ -10,4 +10,6 @@ add_executable(game-maths
         matrices.h
         matrices.cpp
         Geometry2D.h
-        Geometry2D.cpp)
+        Geometry2D.cpp
+        QuadTree.cpp
+        QuadTree.h)

@@ -1,5 +1,5 @@
-#ifndef _H_2D_GEOMTRY_
-#define _H_2D_GEOMTRY_
+#ifndef GAME_MATHS_GEOMETRY2D_H
+#define GAME_MATHS_GEOMETRY2D_H
 
 #include "vectors.h"
 
@@ -89,5 +89,20 @@ bool OverlapOnAxis(const Rectangle2D& rect1, const OrientedRectangle& rect2, con
 bool RectangleOrientedRectangle(const Rectangle2D& rect1, const OrientedRectangle& rect2);
 #define OrientedRectangleRectangle(oriented, regular) RectangleOrientedRectangle(regular, oriented)
 bool OrientedRectangleOrientedRectangle(const OrientedRectangle& r1, const OrientedRectangle& r2);
+
+Circle ContainingCircle(Point2D* pArray, int arrayCount);
+Rectangle2D ContainingRectangle(Point2D* pointArray, int arrayCount);
+
+typedef struct BoundingShape {
+	int numCircles;
+	Circle* circles;
+	int numRectangles;
+	Rectangle2D* rectangles;
+	inline BoundingShape()
+		: numCircles(0), circles(0), numRectangles(0), rectangles(0)
+	{ }
+}; // BoundingShape; ?
+
+bool PointInShape(const BoundingShape& shape, const Point2D& point);
 
 #endif
